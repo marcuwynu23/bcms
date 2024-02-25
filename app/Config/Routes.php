@@ -5,5 +5,8 @@ use CodeIgniter\Router\RouteCollection;
 /**
  * @var RouteCollection $routes
  */
-$routes->get('/', 'Home::index');
-$routes->get('/create', 'Home::create');
+$routes->get('/', function () {
+		return view('home/index');
+});
+$routes->resource('home');
+$routes->resource('about');
